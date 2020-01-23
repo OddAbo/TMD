@@ -39,28 +39,28 @@ FILE *fp_rv, *fp_log, *fp_out, *fp_tmp, *fp_res;
 
 /* Some operation for convinience */
 #define VecSet(v, a, b, c) \
-  (v).x = a,                 \
-  (v).y = b,                 \
+  (v).x = a,               \
+  (v).y = b,               \
   (v).z = c
 
 #define VecAdd(v, a, b, c) \
-  (v).x += a,                \
-  (v).y += b,                \
+  (v).x += a,              \
+  (v).y += b,              \
   (v).z += c
 
 #define VecSub(v, a, b, c) \
-  (v).x -= a,                \
-  (v).y -= b,                \
+  (v).x -= a,              \
+  (v).y -= b,              \
   (v).z -= c
 
 #define VecMul(v, a, b, c) \
-  (v).x *= a,                \
-  (v).y *= b,                \
+  (v).x *= a,              \
+  (v).y *= b,              \
   (v).z *= c
 
 #define VecMod(v, a, b, c) \
-  (v).x /= a,                \
-  (v).y /= b,                \
+  (v).x /= a,              \
+  (v).y /= b,              \
   (v).z /= c
 
 #define VecSetAll(v, a)  VecSet(v, a, a, a)
@@ -69,13 +69,13 @@ FILE *fp_rv, *fp_log, *fp_out, *fp_tmp, *fp_res;
 #define VecModAll(v, d)  VecMod(v, d, d, d)
 
 #define VecsAdd(v1, v2, v3) \
-  (v1).x = (v2).x + (v3).x,       \
-  (v1).y = (v2).y + (v3).y,       \
+  (v1).x = (v2).x + (v3).x, \
+  (v1).y = (v2).y + (v3).y, \
   (v1).z = (v2).z + (v3).z
 
 #define VecsSub(v1, v2, v3) \
-  (v1).x = (v2).x - (v3).x,       \
-  (v1).y = (v2).y - (v3).y,       \
+  (v1).x = (v2).x - (v3).x, \
+  (v1).y = (v2).y - (v3).y, \
   (v1).z = (v2).z - (v3).z
 
 #define VecSqSum(v)  ((v).x * (v).x + (v).y * (v).y + (v).z * (v).z)
