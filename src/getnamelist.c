@@ -18,6 +18,7 @@ typedef struct {
 #define NPT_R     ((real *)(name_list[i].v_ptr) + j)
 
 #define ALL_NAMELIST  for(i = 0; i < n_namelist; ++i)
+
 void GetNameList(int argc, char **argv)
 {  
   int i, j, n_namelist, ok;
