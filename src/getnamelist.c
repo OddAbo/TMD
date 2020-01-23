@@ -31,6 +31,7 @@ void GetNameList(int argc, char **argv)
     NameI(n_mol),
     NameR(rmass),
     NameR(r_cut),
+    NameR(iread),
     NameI(step_max),
     NameR(delta_t),
     NameI(ifixt),
@@ -44,6 +45,8 @@ void GetNameList(int argc, char **argv)
     NameI(step_adjust_volume),
     NameI(ipbc),
     NameR(pbc),
+    NameI(step_print_log),
+    NameI(step_print_out),
   };
 
   strcpy(buff, argv[0]);
@@ -79,14 +82,14 @@ void GetNameList(int argc, char **argv)
             {
               switch (name_list[i].v_type)
               {
-                case N_I:
-                  *NPT_I = atol(token);
-                  break;
-                case N_R:
-                  *NPT_R = atof(token);
-                  break;          
-                default:
-                  break;
+              case N_I:
+                *NPT_I = atol(token);
+                break;
+              case N_R:
+                *NPT_R = atof(token);
+                break;          
+              default:
+                break;
               }
             } else {
               name_list[i].v_stat = 2;
@@ -115,19 +118,17 @@ void GetNameList(int argc, char **argv)
     {
       switch (name_list[i].v_stat)
       {
-        case 1:
-          break;
-        case 2:
-          printf("Error! Wrong input: '%s'.\n",name_list[i].v_name);
-          break;
-        case 3:
-          printf("Error! Too many input: '%s'.\n",name_list[i].v_name);
-          break;
-        case 4:
-          printf("Error! Lacks input: '%s'.\n",name_list[i].v_name);
-          break;
-        default:
-          break;
+      case 1: default:
+        break;
+      case 2:
+        printf("Error! Wrong parameter: '%s'.\n",name_list[i].v_name);
+        break;
+      case 3:
+        printf("Error! Too many input: '%s'.\n",name_list[i].v_name);
+        break;
+      case 4:
+        printf("Error! Lacks parameter: '%s'.\n",name_list[i].v_name);
+        break;
       }
     }
     exit(1);
