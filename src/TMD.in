@@ -1,0 +1,30 @@
+/* Toy Molecular Dynamics program input */
+
+/* Molecule Information */
+n_mol = 50
+rmass = 1.0
+r_cut = 2.5
+
+/* MD Parameter */
+iread = 1
+step_max = 10000
+delta_t = 0.005
+
+/* Fix Temperature, Pressure, Volume */
+ifixt = 1
+des_temp = 1.0
+step_adjust_temp = 1
+/
+ifixp = 1
+des_press = 0.0
+step_adjust_press = 1
+/
+ifixv = 1
+des_volume = 0.0
+step_adjust_volume = 1
+
+/* Periodic Boundary Condition */
+ipbc = 1
+pbc = 1.0, 2.0, 3.0
+
+/* End */
