@@ -33,8 +33,8 @@ int n_mol, i_mol, ifixt, ifixp, ifixv, ipbc, iread;
 int step_max, step_count, step_print_log, step_print_out;
 int step_adjust_temp, step_adjust_press, step_adjust_volume;
 real v_fact, v2_sum, v_eq, time_now, temperature, volume;
-real r_rand_scale, v_rand_scale;
-real mass, rmass, delta_t, r_cut, des_temp, des_press, des_volume;
+real r_rand_scale, v_rand_scale, delta_t, delta_t2;
+real mass, rmass, r_cut, des_temp, des_press, des_volume;
 FILE *fp_rv, *fp_log, *fp_out, *fp_tmp, *fp_res;
 
 /* Some operation for convinience */
@@ -84,10 +84,8 @@ FILE *fp_rv, *fp_log, *fp_out, *fp_tmp, *fp_res;
 
 void GetNameList(int argc, char **argv);
 void SetupJob();
-void SingleStep();
 void PrintProps(int iprint);
 void VelocityVerlet(int part);
-void Force();
 void EvalProps();
 void FixTemperature();
 void FixPressure();

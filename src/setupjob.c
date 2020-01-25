@@ -11,6 +11,7 @@ void SetupJob()
   step_count = 0;
   time_now = step_count * delta_t;
   mass = rmass * kBoltz;
+  delta_t2 = delta_t * delta_t;
   v_eq = sqrt(kBoltz * temperature / mass);
 
   /***********************************************************/
