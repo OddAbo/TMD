@@ -82,4 +82,15 @@ FILE *fp_rv, *fp_log, *fp_out, *fp_tmp, *fp_res;
 
 #define ALL_MOL  for (i_mol = 0; i_mol < n_mol; ++i_mol)
 
+void GetNameList(int argc, char **argv);
+void SetupJob();
+void SingleStep();
+void PrintProps(int iprint);
+void VelocityVerlet(int part);
+void Force();
+void EvalProps();
+void FixTemperature();
+void FixPressure();
+void FixVolume();
+
 #endif

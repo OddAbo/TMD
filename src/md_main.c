@@ -3,11 +3,6 @@
 
 #include "tmd.h"
 
-void GetNameList(int argc, char **argv);
-void SetupJob();
-void SingleStep();
-void PrintProps(int iprint);
-
 int main(int argc, char **argv)
 {
   GetNameList(argc, argv);
@@ -19,7 +14,7 @@ int main(int argc, char **argv)
     SingleStep();
     if (step_count >= step_max) icycle = 0;
   }
-  PrintProp();
+  PrintProps(3);
 
   return 0;
 }

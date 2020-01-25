@@ -2,21 +2,16 @@
 
 #include "tmd.h"
 
-void VelocityVerlet(int part);
-void ApplyPbc();
-void ComputeForce();
-void EvalProps();
-void PrintProps();
-
 void SingleStep()
 {
   ++step_count;
   time_now = step_count * delta_t;
   VelocityVerlet(1);
-  if (ipbc) ApplyPbc();
-  ComputeForce();
+  Force();
+  FixTemperature();
   VelocityVerlet(2);
   EvalProps();
-  PrintProps();
+  if (step_count % step_print_log == 0) PrintProps(1);
+  if (step_count % step_print_out == 0) PrintProps(2);
   return;
 }
