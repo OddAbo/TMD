@@ -29,6 +29,8 @@ void GetNameList(int argc, char **argv)
     NameI(n_mol),
     NameR(rmass),
     NameR(r_cut),
+    NameI(n_nebr),
+    NameR(r_nebr_shell),
     NameR(iread),
     NameI(step_max),
     NameR(delta_t),

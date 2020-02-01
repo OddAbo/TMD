@@ -3,12 +3,14 @@
 /* Molecule Information */
 n_mol = 50
 rmass = 1.0
-r_cut = 2.5
 
 /* MD Parameter */
 iread = 1
 step_max = 10000
 delta_t = 0.005
+r_cut = 2.5
+n_nebr = 30
+r_nebr_shell = 0.2
 
 /* Fix Temperature, Pressure, Volume */
 ifixt = 1

@@ -8,6 +8,8 @@ void SetupJob()
 {
   /*******************/
   /* Sets parameters */
+  update_nebr = 1;
+  n_nebr_tab_max = n_nebr * n_mol;
   step_count = 0;
   time_now = step_count * delta_t;
   mass = rmass * kBoltz;
@@ -48,13 +50,14 @@ void SetupJob()
   FixMassCenter();
   
   /**************************************************/
-  /* Initializes velocity roughly by Factor Scaling */
+  /* Initializes velocity roughly by factor scaling */
   v_fact = 0.;
   v2_sum = 0.;
   ALL_MOL v2_sum += VecSqSum(v[i_mol]);
   v_fact = v_eq / sqrt(v2_sum / n_mol);
   ALL_MOL VecMulAll(v[i_mol], v_fact);
 
+  UpdateNebr();
   Force();
   ValProps();
   PrintProps(0);
